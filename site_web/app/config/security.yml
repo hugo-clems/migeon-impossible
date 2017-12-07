@@ -2,16 +2,11 @@
 # https://symfony.com/doc/current/security.html
 security:
     encoders:
-        MyfreelanceBundle\Entity\User: sha512
+        NIBundle\Entity\Utilisateur: sha512
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         provider:
-            entity: { class: MyfreelanceBundle:Provider, property: username }
-        customer:
-            entity: {class: MyfreelanceBundle:Customer, property: username }
-        all_user:
-            chain:
-                providers: [provider,customer]
+            entity: { class: NIBundle:Utilisateur, property: username }
         in_memory:
             memory: ~
 
@@ -24,7 +19,7 @@ security:
         main:
             pattern: ^/
             form_login:
-                provider: all_user
+                provider: provider
                 csrf_token_generator: security.csrf.token_manager
                 login_path: fos_user_provider_security_login
                 check_path: fos_user_provider_security_check

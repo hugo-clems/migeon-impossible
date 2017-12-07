@@ -77,42 +77,13 @@ swiftmailer:
 fos_user:
     db_driver: orm #other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
-    user_class: MyfreelanceBundle\Entity\User
+    user_class: NIBundle\Entity\Utilisateur
     from_email:
 #        address: "%mailer_user%"
 #        sender_name: "%mailer_user%"
         address: alexandre.assie@gmail.com
         sender_name: report
-    service:
-        user_manager: pugx_user_manager
 
-pugx_multi_user:
-  users:
-    provider:
-        entity: 
-          class: MyfreelanceBundle\Entity\Provider
-#          factory: 
-#        registration:
-#          form: 
-#            type: MyfreelanceBundle\Form\Type\RegistrationUserOneFormType
-#            name: fos_user_registration_form
-#            validation_groups:  [Registration, Default]
-#          template: MyfreelanceBundle:Registration:user_one.form.html.twig
-#        profile:
-#          form:
-#            type: MyfreelanceBundle\Form\Type\ProfileUserOneFormType
-#            name: fos_user_profile_form
-#            validation_groups:  [Profile, Default] 
-    customer:
-        entity: 
-          class: MyfreelanceBundle\Entity\Customer
-#        registration:
-#          form: 
-#            type: MyreelanceBundle\Form\Type\RegistrationUserTwoFormType
-#          template: AcmeUserBundle:Registration:user_two.form.html.twig
-#        profile:
-#          form: 
-#            type: Acme\UserBundle\Form\Type\ProfileUserTwoFormType
 
     
 knp_snappy:
