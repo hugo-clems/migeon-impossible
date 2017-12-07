@@ -1,0 +1,30 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+            
+<h1 class="f-4 m-a-0">Rare</h1>
+<h4>Sign in to start your session</h4>
+<form class="text-left" role="form" action="{{ path("fos_user_provider_security_check") }}" method="post">
+     {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+  <div class="form-group has-feedback">
+    <input type="text" id="username" name="_username" class="form-control" placeholder="{{ 'security.login.username'|trans }}">
+    <span class="form-control-feedback">
+      <i class="fa fa-fw fa-envelope"></i>
+    </span>
+  </div>
+  <div class="form-group has-feedback">
+    <input  id="password" name="_password" required="required" class="form-control" placeholder="{{ 'security.login.password'|trans }}" type="password">
+    <span class="form-control-feedback">
+      <i class="fa fa-fw fa-key"></i>
+    </span>
+  </div>
+  <input type="submit" class="btn btn-primary btn-block m-b-15" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" >
+  <a href="{{path('fos_user_provider_resetting_request')}}">
+    <small>Forgot password?</small>
+  </a>
+  </p>
+</form>

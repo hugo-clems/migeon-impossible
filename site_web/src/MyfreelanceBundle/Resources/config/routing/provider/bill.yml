@@ -1,0 +1,24 @@
+myfreelance_bill_index:
+    path:     /
+    defaults: { _controller: "MyfreelanceBundle:Bill:index" }
+    methods:  GET
+
+myfreelance_bill_show:
+    path:     /{id}/show
+    defaults: { _controller: "MyfreelanceBundle:Bill:show" }
+    methods:  GET
+
+myfreelance_bill_new:
+    path:     /new
+    defaults: { _controller: "MyfreelanceBundle:Bill:new" }
+    methods:  [GET, POST]
+
+myfreelance_bill_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MyfreelanceBundle:Bill:edit" }
+    methods:  [GET, POST]
+
+myfreelance_bill_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MyfreelanceBundle:Bill:delete" }
+    methods:  DELETE

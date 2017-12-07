@@ -1,0 +1,24 @@
+myfreelance_state_index:
+    path:     /
+    defaults: { _controller: "MyfreelanceBundle:State:index" }
+    methods:  GET
+
+myfreelance_state_show:
+    path:     /{id}/show
+    defaults: { _controller: "MyfreelanceBundle:State:show" }
+    methods:  GET
+
+myfreelance_state_new:
+    path:     /new
+    defaults: { _controller: "MyfreelanceBundle:State:new" }
+    methods:  [GET, POST]
+
+myfreelance_state_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MyfreelanceBundle:State:edit" }
+    methods:  [GET, POST]
+
+myfreelance_state_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MyfreelanceBundle:State:delete" }
+    methods:  [DELETE,GET]
