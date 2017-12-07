@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <style>
+            logo {
+                padding-bottom: 10px;
+            }
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td, th {
+                border: 1px solid black;
+                text-align: left;
+                padding: 8px;
+                text-align: center;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+
+            ul > li {
+                list-style-type: none;
+            }
+        </style>
+
+    <page>   
+
+        <h2 style="align:center">Facture n° {{bill.numero}}</h2>
+        {# INFORMATION SOCIETE #}
+        {% set society = bill.provider %}
+        <div>
+            <ul>
+                <li style="margin-bottom: 1em">{{society.name}}</li>
+
+                <li>{{society.address}}</li>
+                <li>{{society.zipCode ~" "~ society.city}}</li>
+                <li>{{society.phone}}</li>
+                <li>N° SIRET : {{society.siret}}</li>
+            </ul>
+
+            {# NFORMATION CLIENT #}
+            {% set customer = bill.customer %}
+            <div style="width: 50%;float: right;display: block">      
+                Facturé à
+                <ul>
+                    <li>{{customer.name}}</li>
+                    <li>{{customer.address}}</li>
+                    <li>{{customer.zipCode ~ " "~ customer.city}}</li>
+                </ul>
+            </div>
+            {# INFORMATION FACTURE #}
+
+            <ul style="clear: both">
+                <li>Date : {{bill.date|date('d/m/Y')}}</li>
+                <li>Référence : {{bill.title }}</li>
+                <li>Numéro de facture : {{bill.numero}}</li>
+            </ul>
+
+            {#  INFORMATION PRODUIT #}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Description</th>
+                        <th>Nombres d'heures</th>
+                        <th>Prix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ticket in  bill.ticketList %}
+                        <tr>
+                            <td>{{ticket.title}}</td>
+                            <td>{{ticket.description}}</td>
+                            <td>{{ticket.nbHour|time('h')}}</td>
+                            <td>{{ticket.price|price}}</td>
+                        </tr>
+
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div style="width:50%;float:right;">
+                <table style="margin-top: 1em;">
+                    <tr>
+                        <td>Total Hors Taxe</td>
+                        <td>{{bill.priceHT|price}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">TVA non applicable, art 293 B du CGI</td>
+                        {#<td>Total TTC en euros</td>
+                        <td>{{ bill.priceTTC|price }}</td>#}
+                    </tr>
+                </table>
+                
+            </div>
+            <ul style="clear: both">
+                <li>Date limite de règlement : Aucune</li>
+                <li>Taux des pénalités de retard : 0%</li>
+                <li>Taux d'escompte: 0%</li>
+            </ul>
+
+
+    </page>
+</body>
+</html>

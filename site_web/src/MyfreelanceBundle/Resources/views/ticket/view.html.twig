@@ -1,0 +1,38 @@
+{% extends "MyfreelanceBundle::template.html.twig" %}
+
+
+{% block title %}
+    #{{ticket.id}} - {{ticket.title}}
+{% endblock %}
+{% block body %}
+    <div class="box">
+        <div class="box-body">
+            <h4>{{ticket.startDate|date('d/m/y')}}</h4>
+            <p>{{ticket.description}}</p>
+            
+            
+        </div>
+    </div>
+    {% for task in ticket.taskList %}
+    <div class="box">
+        <div class="box-body">
+            <span>{{task.date|date('d/m/y')}}</span>
+            <span>{{task.nbHour|time}}</span>
+            <p>{{task.description}}</p>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="box">
+        <header>
+            <h4>Ajout tache</h4>
+        </header>
+        <div class="box-body">
+        {{form_start(form)}}
+        {%for elem in form %}
+            {{form_row(elem)}}
+        {% endfor %}
+        <input type="submit" value="valider" class="btn btn-primary">
+        {{form_end(form)}}
+        </div>
+    </div>
+{% endblock %}

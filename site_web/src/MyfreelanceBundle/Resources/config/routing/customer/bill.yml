@@ -1,0 +1,8 @@
+myfreelance_customer_bill_index:
+    path: /index
+    defaults: { _controller: "MyfreelanceBundle:Customer/Bill:index"}
+
+myfreelance_customer_bill_view:
+   path: /{bill}
+   defaults: { _controller: "MyfreelanceBundle:Customer/Bill:view"}
+   

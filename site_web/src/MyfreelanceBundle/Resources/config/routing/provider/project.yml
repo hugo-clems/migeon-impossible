@@ -1,0 +1,4 @@
+myfreelance_project_index:
+    path: /
+    defaults: { _controller: MyfreelanceBundle:Project:index }
+    

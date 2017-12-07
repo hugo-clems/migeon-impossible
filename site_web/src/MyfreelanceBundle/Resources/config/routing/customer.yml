@@ -1,0 +1,16 @@
+
+myfreelance_customer_project:
+    prefix: /project/{project}
+    resource: "@MyfreelanceBundle/Resources/config/routing/customer/project.yml"
+    
+myfreelance_customer_bill:
+    prefix: /bill
+    resource: "@MyfreelanceBundle/Resources/config/routing/customer/bill.yml"
+
+myfreelance_customer_index:
+    path: /
+    defaults : { _controller: "MyfreelanceBundle:Customer/Default:index"}
+    
+myfreelance_customer_add_ticket:
+    path: /ticket
+    defaults: { _controller: "MyfreelanceBundle:Customer/Default:editTicket"}

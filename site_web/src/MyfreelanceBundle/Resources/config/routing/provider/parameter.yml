@@ -1,0 +1,27 @@
+myfreelance_parameter_customer_index:
+    path: /
+    defaults: { _controller: MyfreelanceBundle:Parameter:index }
+    
+myfreelance_parameter_customer_add:
+    path: /customer/add
+    defaults: { _controller: MyfreelanceBundle:Parameter:editCustomer }
+    
+myfreelance_parameter_customer_edit:
+    path: /customer/edit
+    defaults: { _controller: MyfreelanceBundle:Parameter:editCustomer }
+    
+myfreelance_parameter_project_add:
+    path: /project/add/
+    #{idCustomer}
+    defaults: { _controller: MyfreelanceBundle:Parameter:editProject }
+    
+myfreelance_parameter_project_edit:
+    path: /project/edit/ 
+    #{idCustomer}
+    defaults: { _controller: MyfreelanceBundle:Parameter:editProject }
+    
+myfreelance_parameter_project_delete:
+    path: /project/delete/{id}
+    defaults: { _controller: MyfreelanceBundle:Parameter:deleteProject }
+    methods: GET
+        

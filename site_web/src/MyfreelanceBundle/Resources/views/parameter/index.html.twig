@@ -1,0 +1,74 @@
+{% extends "MyfreelanceBundle::template.html.twig" %}
+
+
+{% block title %}
+    Gestion des Clients
+{% endblock %}
+{% block body %}
+<div class="container-fluid p-t-15">
+    <div class="row">
+        <a href="{{path('myfreelance_parameter_customer_add')}}" class="btn btn-rect btn-default mar-btn">Ajout</a>
+    </div>
+    {% for customer in customerList %}
+        
+ 
+    <div class="row">
+        <div class="box shadow-3dp">
+          <header>
+            <h4>{{customer.id ~"."~customer.name}}</h4>
+            <a class="btn" href="{{path('myfreelance_parameter_customer_edit',{'idCustomer':customer.id})}}">edit</a>
+            <a class="btn" href="{{path('myfreelance_parameter_project_add',{'idCustomer':customer.id})}}">Add project</a>
+            
+            <!-- begin box-tools -->
+            <div class="box-tools">
+              <a class="fa fa-fw fa-minus" href="#" data-box="collapse"></a>
+              <a class="fa fa-fw fa-square-o" href="#" data-fullscreen="box"></a>
+              <a class="fa fa-fw fa-refresh" href="#" data-box="refresh"></a>
+              <a class="fa fa-fw fa-times" href="#" data-box="close"></a>
+            </div>
+            <!-- END: box-tools -->
+          </header>
+          <div class="box-body collapse in">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nom</th>
+                        <th>Date</th>
+                        <th>Nb ticket</th>
+                        <th>Avancement</th>
+                        <th></th>
+                    </tr>
+                        
+                </thead>
+              <tbody>
+                      {% for project in customer.projectList %}
+                          <tr>
+                              <td>{{project.id}}</td>
+                              <td>{{project.name}}</td>
+                              <td>{{project.date|date('d/m/Y')}}</td>
+                              <td>{{project.numberTicket}}</td>
+                              <td>
+                                <div class="progress is-xs m-a-0 m-t-10">
+                                  <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: {{project.percentageAdvancement}}%;">
+                                    <span class="sr-only">20% Complete</span>
+                                  </div>
+                                </div>
+                              </td>
+                              <td><a href="{{path('myfreelance_parameter_project_edit',{'idProject':project.id})}}">edit</a></td>
+                              <td>{% if project.isDeletable %}<a href="{{path('myfreelance_parameter_project_delete',{'id':project.id})}}">delete</a>{% endif %}</td>
+                              <td><a href="{{path('myfreelance_project_index',{'idProject':project.id})}}">voir</a></td>
+                              
+                          </tr>
+                      {% endfor %}
+                
+                  
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+</div>
+   {% endfor %}
+{% endblock %}
