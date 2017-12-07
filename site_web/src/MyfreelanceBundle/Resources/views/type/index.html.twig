@@ -1,0 +1,32 @@
+{% extends 'MyfreelanceBundle::template.html.twig' %}
+
+{% block body %}
+    <div class="box">
+        <div class="box-body">
+                <a href="{{ path('myfreelance_type_new') }}" class="btn btn-default">Creer un nouvel etat</a>
+
+                <h1>States list</h1>
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for type in types %}
+                        <tr>
+                            <td><a href="{{ path('myfreelance_type_show', { 'id': type.id }) }}">{{ type.id }}</a></td>
+                            <td>{{ type.name }}</td>
+                            <td>
+                                <a class="btn btn-default" href="{{ path('myfreelance_type_edit', { 'id': type.id }) }}">edit</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+        </div>
+    </div>
+{% endblock %}

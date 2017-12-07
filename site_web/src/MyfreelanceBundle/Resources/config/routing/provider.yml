@@ -1,0 +1,23 @@
+myfreelance_parameter:
+    resource: "@MyfreelanceBundle/Resources/config/routing/provider/parameter.yml"
+    prefix:   /parameter
+
+myfreelance_ticket:
+    resource: "@MyfreelanceBundle/Resources/config/routing/provider/ticket.yml"
+    prefix:   /ticket
+    
+myfreelance_project:
+    resource: "@MyfreelanceBundle/Resources/config/routing/provider/project.yml"
+    prefix: /project/{idProject}/
+    
+myfreelance_state:
+        resource: "@MyfreelanceBundle/Resources/config/routing/provider/state.yml"
+        prefix:   /state
+        
+myfreelance_type:
+        resource: "@MyfreelanceBundle/Resources/config/routing/provider/type.yml"
+        prefix:   /type
+        
+myfreelance_bill:
+        resource: "@MyfreelanceBundle/Resources/config/routing/provider/bill.yml"
+        prefix:   /bill

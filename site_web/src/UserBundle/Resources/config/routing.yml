@@ -1,0 +1,36 @@
+fos_user_provider_security_login:
+    path:  /login
+    defaults: { _controller: UserBundle:Security:login }
+ 
+# Route de vérification de connexion au Backoffice
+fos_user_provider_security_check:
+    path:  /check
+    defaults: { _controller: UserBundle:Security:check }
+    requirements:
+        _method: POST
+ 
+# Route de déconnexion du Backoffice
+fos_user_provider_security_logout:
+    path:  /logout
+    defaults: { _controller: UserBundle:Security:logout }
+    
+    
+fos_user_provider_resetting_request:
+    path : "/request"
+    methods: "GET"
+    defaults: { _controller : "FOSUserBundle:Resetting:request" }
+
+fos_user_provider_resetting_send_email:
+    path: "/send-email"
+    methods: "POST"
+    defaults: {_controller : "FOSUserBundle:Resetting:sendEmail"}
+
+fos_user_provider_resetting_check_email:
+    path : /check-email
+    methods: "GET"
+    defaults :  {_controller : "FOSUserBundle:Resetting:checkEmail" }
+
+fos_user_provider_resetting_reset:
+    path: "/reset/{token}"
+    methods: "GET POST"
+    defaults : {  _controller" : "FOSUserBundle:Resetting:reset" }

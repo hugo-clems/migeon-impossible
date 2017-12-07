@@ -1,0 +1,11 @@
+myfreelance_customer_project_index:
+    path: /index
+    defaults: { _controller: "MyfreelanceBundle:Customer/Project:index"}
+
+myfreelance_customer_project_ticket:
+   path: /ticket/{ticket}
+   defaults: { _controller: "MyfreelanceBundle:Customer/Project:ticket"}
+   
+myfreelance_customer_project_add_ticket:
+    path: /ticket/add
+    defaults: { _controller: "MyfreelanceBundle:Customer/Project:editTicket"}

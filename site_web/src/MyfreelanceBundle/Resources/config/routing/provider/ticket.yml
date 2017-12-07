@@ -1,0 +1,11 @@
+myfreelance_ticket_index:
+    path: /
+    defaults: { _controller: MyfreelanceBundle:Ticket:index }
+    
+myfreelance_ticket_add:
+    path: /add
+    defaults: { _controller: MyfreelanceBundle:Ticket:edit }
+    
+myfreelance_ticket_view:
+    path: /view/{idTicket}
+    defaults: { _controller: MyfreelanceBundle:Ticket:view }

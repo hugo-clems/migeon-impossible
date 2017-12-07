@@ -1,0 +1,63 @@
+{% extends "TicketBundle::template.html.twig" %}
+
+
+{% block title %}
+    Gestion des Client
+{% endblock %}
+{% block body %}
+<div class="container-fluid p-t-15">
+    <div class="row">
+        <a href="{{path('myfreeelance_parameter_customer_add')}}" class="btn btn-rect btn-default mar-btn">Ajout</a>
+    </div>
+    
+    {% for customer in customerList %}
+        
+    {% endfor %}
+    <div class="row">
+        <div class="box shadow-3dp">
+          <header>
+            <h4>Bordered Table</h4>
+            <!-- begin box-tools -->
+            <div class="box-tools">
+              <a class="fa fa-fw fa-minus" href="#" data-box="collapse"></a>
+              <a class="fa fa-fw fa-square-o" href="#" data-fullscreen="box"></a>
+              <a class="fa fa-fw fa-refresh" href="#" data-box="refresh"></a>
+              <a class="fa fa-fw fa-times" href="#" data-box="close"></a>
+            </div>
+            <!-- END: box-tools -->
+          </header>
+          <div class="box-body collapse in">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Score</th>
+                  <th>Skills</th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% for customer in customerList %}
+                      {{dump(customer)}}
+                <tr>
+                  <td>1</td>
+                  <td>Jill</td>
+                  <td>Smith</td>
+                  <td>50</td>
+                  <td>
+                    <div class="progress is-xs m-a-0 m-t-10">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+                        <span class="sr-only">50% Complete</span>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
