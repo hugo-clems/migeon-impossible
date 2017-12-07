@@ -1,3 +1,7 @@
+ni:
+    resource: "@NIBundle/Resources/config/routing.yml"
+    prefix:   /
+
 
 myfreelance:
     resource: "@MyfreelanceBundle/Resources/config/routing.yml"

@@ -7,7 +7,8 @@
         "psr-4": {
             "AppBundle\\": "src/AppBundle",
             "MyfreelanceBundle\\":"src/MyfreelanceBundle",
-            "UserBundle\\":"src/UserBundle"
+            "UserBundle\\":"src/UserBundle",
+            "NIBundle\\":"src/NIBundle"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },
@@ -56,7 +57,10 @@
         ],
         "post-update-cmd": [
             "@symfony-scripts"
-        ]
+        ],
+        "auto-scripts": {
+            "security-checker security:check": "script"
+        }
     },
     "config": {
         "platform": {
