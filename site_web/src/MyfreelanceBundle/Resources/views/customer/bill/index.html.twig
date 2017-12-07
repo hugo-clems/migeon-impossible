@@ -1,0 +1,38 @@
+{% extends "MyfreelanceBundle::template.html.twig" %}
+
+{% block title %} Accueil - {{ parent() }}{% endblock %}
+
+{% block body %}
+	<div class="box">
+            <div class="box-body">
+	
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>date</td>
+                    <td>etat</td>
+                    <td>voir</td>
+                </tr>
+            </thead>
+            <tbody>
+                {%for bill in billList %}
+                    {{dump(bill)}}
+                    {#<tr>
+                        <td>{{ticket.title}}</td>
+                        <td>{{ticket.state|state}}</td>
+                        <td>
+                            <div class="progress is-xs m-a-0 m-t-10">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{ticket.percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{ticket.percentage}}%;">
+                                    <span class="sr-only">{{ticket.percentage}}% Complete</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td><a href="{{path('myfreelance_customer_project_ticket',{'project':project.id,'ticket':ticket.id})}}">Voir</a></td>
+                    </tr>#}
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+        </div>
+{% endblock %}

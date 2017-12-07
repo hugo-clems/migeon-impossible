@@ -1,9 +1,20 @@
-
-###> symfony/framework-bundle ###
-.env
-/public/bundles/
-/var/
+/.web-server-pid
+/app/config/parameters.yml
+/build/
+/phpunit.xml
+/var/*
+!/var/cache
+/var/cache/*
+!var/cache/.gitkeep
+!/var/logs
+/var/logs/*
+!var/logs/.gitkeep
+!/var/sessions
+/var/sessions/*
+!var/sessions/.gitkeep
+!var/SymfonyRequirements.php
 /vendor/
+<<<<<<< HEAD
 ###< symfony/framework-bundle ###
 
 # IntelliJ IDEA
@@ -15,3 +26,12 @@
 
 # Composer
 composer.lock
+=======
+/web/bundles/
+*.php~
+>>>>>>> ffe2f9a555a6fef1bcee913b3ef614e87e22c5f8
+
+###> symfony/phpunit-bridge ###
+.phpunit
+/phpunit.xml
+###< symfony/phpunit-bridge ###

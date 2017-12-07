@@ -1,0 +1,27 @@
+myfreelance_index:
+    path: /
+    defaults: { _controller: MyfreelanceBundle:Default:index }
+
+myfreelance_provider:
+    resource: "@MyfreelanceBundle/Resources/config/routing/provider.yml"
+    prefix: /provider
+    
+myfreelance_customer:
+    resource: "@MyfreelanceBundle/Resources/config/routing/customer.yml"
+    prefix: /customer
+            
+fos_user_provider_security_login:
+    path:  /login
+    defaults: { _controller: MyfreelanceBundle:Security:login }
+ 
+# Route de vérification de connexion au Backoffice
+fos_user_provider_security_check:
+    path:  /check
+    defaults: { _controller: MyfreelanceBundle:Security:check }
+    requirements:
+        _method: POST
+ 
+# Route de déconnexion du Backoffice
+fos_user_provider_security_logout:
+    path:  /logout
+    defaults: { _controller: MyfreelanceBundle:Security:logout }
