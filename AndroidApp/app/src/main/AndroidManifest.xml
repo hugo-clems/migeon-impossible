@@ -28,7 +28,7 @@
         <activity android:name=".DangerInstructionsActivity" />
         <activity android:name=".RadioActivity"
             android:label="Radio King"
-            android:configChanges="orientation|screenSize">
+            android:configChanges="orientation|screenSize" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
