@@ -1,10 +1,12 @@
 package com.impossible.migeon.androidapp.beans;
 
+import com.impossible.migeon.androidapp.parsing.GSonSerializer;
+
 /**
  * Created by Bastien on 07/12/2017.
  */
 
-public class DangerType {
+public class DangerType extends GSonSerializer<DangerType> {
 
     private long id;
     private String name;
@@ -15,7 +17,7 @@ public class DangerType {
 
 
     public DangerType() {
-
+        super(DangerType.class);
     }
 
     public long getId() {
