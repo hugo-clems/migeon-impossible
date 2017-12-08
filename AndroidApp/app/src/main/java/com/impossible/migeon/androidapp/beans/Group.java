@@ -1,19 +1,21 @@
 package com.impossible.migeon.androidapp.beans;
 
+import com.impossible.migeon.androidapp.parsing.GSonSerializer;
+
 import java.util.Set;
 
 /**
  * Created by Bastien on 07/12/2017.
  */
 
-public class Group {
+public class Group extends GSonSerializer<Group> {
 
     private long id;
     private Set<User> users;
 
 
     public Group() {
-
+        super(Group.class);
     }
 
     public long getId() {

@@ -1,12 +1,14 @@
 package com.impossible.migeon.androidapp.beans;
 
+import com.impossible.migeon.androidapp.parsing.GSonSerializer;
+
 import java.util.List;
 
 /**
  * Created by Bastien on 07/12/2017.
  */
 
-public class User {
+public class User extends GSonSerializer<User> {
 
     private long id;
     private String firstName, lastName;
@@ -20,7 +22,7 @@ public class User {
 
 
     public User() {
-
+        super(User.class);
     }
 
     public long getId() {

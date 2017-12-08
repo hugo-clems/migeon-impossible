@@ -1,0 +1,38 @@
+{% extends 'MyfreelanceBundle::template.html.twig' %}
+
+{% block body %}
+    <div class="box">
+        <div class="box-body">
+                <a href="{{ path('myfreelance_bill_new') }}" class="btn btn-default">Creer une facture</a>
+
+                <h1>States list</h1>
+
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>numero</th>
+                            <th>Date</th>
+                            <th>Etat</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for bill in bills %}
+                        <tr>
+                            <td><a href="{{ path('myfreelance_bill_show', { 'id': bill.id }) }}">{{ bill.numero }}</a></td>
+                            <td>{{bill.date|date('d/m/Y')}}</td>
+                            <td>{{bill.etatLabel}}</td>
+                            <td>
+                                {% if bill.isConstruct %}
+                                <a class="btn btn-default" href="{{ path('myfreelance_bill_edit', { 'id': bill.id }) }}">edit</a>
+                                {% else %}
+                                    <a class="btn btn-default" target="_blanc" href="{{path('myfreelance_bill_show',{'id':bill.id})}}" >Voir</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+        </div>
+    </div>
+{% endblock %}

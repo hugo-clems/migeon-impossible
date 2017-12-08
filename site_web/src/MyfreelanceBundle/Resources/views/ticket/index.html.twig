@@ -1,0 +1,57 @@
+{% extends "MyfreelanceBundle::template.html.twig" %}
+
+
+{% block title %}
+    Gestion des tickets
+{% endblock %}
+{% block body %}
+<div class="container-fluid p-t-15">
+    <div class="row">
+        <a href="{{path('myfreelance_ticket_add')}}" class="btn btn-rect btn-default mar-btn">Ajout</a>
+    </div>
+    <div class="row">
+        <div class="box shadow-3dp">
+          <header>
+            <h4>Bordered Table</h4>
+            <!-- begin box-tools -->
+            <div class="box-tools">
+              <a class="fa fa-fw fa-minus" href="#" data-box="collapse"></a>
+              <a class="fa fa-fw fa-square-o" href="#" data-fullscreen="box"></a>
+              <a class="fa fa-fw fa-refresh" href="#" data-box="refresh"></a>
+              <a class="fa fa-fw fa-times" href="#" data-box="close"></a>
+            </div>
+            <!-- END: box-tools -->
+          </header>
+          <div class="box-body collapse in">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>title</th>
+                  <th>etat</th>
+                  <th>avancement</th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% for ticket in ticketList %}
+                <tr>
+                  <td>{{ticket.id}}</td>
+                  <td>{{ticket.title}}</td>
+                  <td>{{ticket.state.name}}</td>
+                  <td>
+                    <div class="progress is-xs m-a-0 m-t-10">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="{{ticket.percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{ticket.percentage}}%;">
+                        <span class="sr-only">{{ticket.percentage}}% Complete</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>editer</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

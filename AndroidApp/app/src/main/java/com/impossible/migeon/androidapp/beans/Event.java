@@ -1,5 +1,7 @@
 package com.impossible.migeon.androidapp.beans;
 
+import com.impossible.migeon.androidapp.parsing.GSonSerializer;
+
 import java.util.Date;
 import java.util.Set;
 
@@ -7,7 +9,7 @@ import java.util.Set;
  * Created by Bastien on 07/12/2017.
  */
 
-public class Event {
+public class Event extends GSonSerializer<Event> {
 
     private long id;
     private boolean open;
@@ -20,7 +22,7 @@ public class Event {
 
 
     public Event() {
-
+        super(Event.class);
     }
 
     public long getId() {
