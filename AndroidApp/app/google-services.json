@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "249262100890",
+    "project_id": "androidapp-224a2"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249262100890:android:7764a786ca8db951",
+        "android_client_info": {
+          "package_name": "com.impossible.migeon.androidapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "249262100890-jk5q9dk8ju01r5cj5thi9n7ptgv84dbc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.impossible.migeon.androidapp",
+            "certificate_hash": "f77712c8132f4a3f14a905c57ffcfe5a35d7fdaf"
+          }
+        },
+        {
+          "client_id": "249262100890-tji147aespud9qvnk02e0evhbsdupbl4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIGHnzlBTwNAvetSxX64jWXs_ygeKWNyk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
