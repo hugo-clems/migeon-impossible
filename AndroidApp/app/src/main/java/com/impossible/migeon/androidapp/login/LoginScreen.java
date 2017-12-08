@@ -18,6 +18,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.impossible.migeon.androidapp.MainActivity;
 import com.impossible.migeon.androidapp.R;
 
 
@@ -68,6 +69,8 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
             Log.e("eh", "nom " + name);
             Log.e("eh", "email = " + email);
             fail.setVisibility(View.GONE);
+            Intent i = new Intent(this, MainActivity.class);
+            startActivity(i);
         } else {
             fail.setVisibility(View.VISIBLE);
         }
