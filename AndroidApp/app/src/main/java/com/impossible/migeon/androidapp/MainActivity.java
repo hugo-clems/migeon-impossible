@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
 
         IMapController mapController = mMapView.getController();
         mapController.setZoom(9);
-        GeoPoint startPoint = new GeoPoint(48.8583, 2.2944);
+        GeoPoint startPoint = new GeoPoint(29.978912, 31.134241);
         mapController.setCenter(startPoint);
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);

@@ -78,7 +78,9 @@ public class LoginScreen extends AppCompatActivity implements View.OnClickListen
 
     private void updateUI(boolean isLogin) {
         if (isLogin) {
-
+            // do something :-)
+        } else {
+            // do something else :-)
         }
     }
 
